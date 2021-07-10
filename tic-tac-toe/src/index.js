@@ -2,25 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-class Square extends React.Component {
-  // state 초기화
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: null,
-    };
-  }
-  render() {
-    //console.log(this); // square
+// function Component : render만 가짐(state 못 씀)
+function Square(props) {
+
     return (
       <button
         className="square"
-        onClick={() => this.props.onClick()}
+        onClick={props.onClick}
       >
-        {this.props.value}
+        {props.value}
       </button>
     );
-  }
+
 }
 
 class Board extends React.Component {
